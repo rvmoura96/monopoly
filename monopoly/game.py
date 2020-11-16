@@ -57,7 +57,6 @@ behaviours_percs = {
 }
 most_behavior_victories = behaviours_victories.most_common(1)[0]
 
-print(f"{behaviours_victories=}")
 print(
     f"Comportamento com maior taxa de vitorias - {most_behavior_victories[0]} = {behaviours_percs.get(most_behavior_victories[0])}"
 )
