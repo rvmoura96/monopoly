@@ -14,13 +14,13 @@ With poetry installed you can easily create an virtual environment and install a
 poetry shell; poetry install
 ```
 
-After create a virtual environment and install all dependencies you can run unittest with the following command
+After creating the virtual environment and installing all dependencies, the following command can be used to run unittests
 
 ```
 pytest
 ```
 
-To execute the core for monopoly simulator you should run the following command it will plot on the shell the results for simulations:
+To execute the core for monopoly simulator you should run the following command, it will plot on the shell the results for simulations:
 ```
 python monopoly/game.py
 ```
