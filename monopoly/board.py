@@ -23,10 +23,9 @@ class Board:
         ) % len(self.locations)
 
     def remove_losers(self, losers):
-        self.players_order = filter(
-            lambda player: player not in losers, self.players_order
-        )
-
+        self.players_order = [
+            player for player in self.players_order if player not in losers
+        ]
         for loser in losers:
             self.players_location.pop(loser)
 
@@ -39,11 +38,9 @@ class Board:
         player.update_balance(bonus_value)
 
     def get_winner(self):
-        try:
-            balance_rank = {player.balance: player for player in self.players_order}
-            winner = balance_rank.get(max(balance_rank))
-            return winner
-        except:
-            import ipdb
+        balance_rank = {
+            player.balance: player for player in self.players_order
+        }
 
-            ipdb.post_mortem()
+        winner = balance_rank.get(max(balance_rank.keys()))
+        return winner

@@ -42,7 +42,7 @@ jobs:
         run: poetry run black . --check
 
       - name: Xenon
-        run: xenon --max-absolute A --max-modules A --max-average A .
+        run: xenon --max-absolute B --max-modules A --max-average A .
 
   testes:
     runs-on: ubuntu-latest

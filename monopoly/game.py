@@ -31,7 +31,6 @@ while simulations < 300:
     turns = 1
 
     while turns <= 1000 and len(board.players_order) > 1:
-        print(f"{simulations=} - {turns=} - {board.players_order=}")
         for player in board.players_order:
             player_initial_position = board.players_location.get(player)
             board.update_player_location(player)
@@ -41,10 +40,8 @@ while simulations < 300:
             player.pay_rent(board.locations[board.players_location.get(player)])
             if player.balance <= 0 and len(board.players_order) > 1:
                 board.remove_losers([player])
-        print(board.players_order)
         if len(board.players_order) == 1:
             winner = board.get_winner()
-            print(f"turns: {turns} - {winner}")
             break
         turns += 1
     else:
@@ -62,9 +59,9 @@ most_behavior_victories = behaviours_victories.most_common(1)[0]
 
 print(f"{behaviours_victories=}")
 print(
-    f"maior vitoria comportamento - {most_behavior_victories[0]} - {behaviours_percs.get(most_behavior_victories[0])}"
+    f"Comportamento com maior taxa de vitorias - {most_behavior_victories[0]} = {behaviours_percs.get(most_behavior_victories[0])}"
 )
-print(f"{behaviours_percs=}")
+print(f"Comportamentos e suas porcentagens de vitorias em todas as simulações = {behaviours_percs=}")
 
-print(f"{mean(hist_turns)=}")
-print(f"{timeout_victories=}")
+print(f"Média de turnos = {mean(hist_turns)=}")
+print(f"Vitórias por timeout = {timeout_victories=}")
