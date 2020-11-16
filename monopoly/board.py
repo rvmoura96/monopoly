@@ -38,9 +38,7 @@ class Board:
         player.update_balance(bonus_value)
 
     def get_winner(self):
-        balance_rank = {
-            player.balance: player for player in self.players_order
-        }
+        balance_rank = {player.balance: player for player in self.players_order}
 
         winner = balance_rank.get(max(balance_rank.keys()))
         return winner

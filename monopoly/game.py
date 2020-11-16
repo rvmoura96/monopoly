@@ -61,7 +61,9 @@ print(f"{behaviours_victories=}")
 print(
     f"Comportamento com maior taxa de vitorias - {most_behavior_victories[0]} = {behaviours_percs.get(most_behavior_victories[0])}"
 )
-print(f"Comportamentos e suas porcentagens de vitorias em todas as simulações = {behaviours_percs=}")
+print(
+    f"Comportamentos e suas porcentagens de vitorias em todas as simulações = {behaviours_percs=}"
+)
 
 print(f"Média de turnos = {mean(hist_turns)=}")
 print(f"Vitórias por timeout = {timeout_victories=}")
