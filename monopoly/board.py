@@ -40,9 +40,7 @@ class Board:
 
     def get_winner(self):
         try:
-            balance_rank = {
-                player.balance: player for player in self.players_order
-            }
+            balance_rank = {player.balance: player for player in self.players_order}
             winner = balance_rank.get(max(balance_rank))
             return winner
         except:

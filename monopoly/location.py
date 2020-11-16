@@ -11,4 +11,4 @@ class Location:
         self.ownser = None
 
     def __repr__(self):
-        return f'{self.owner} - {self.cost_of_sale} - {self.cost_of_rent}'
+        return f"{self.owner} - {self.cost_of_sale} - {self.cost_of_rent}"

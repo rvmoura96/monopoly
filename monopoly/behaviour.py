@@ -12,6 +12,9 @@ class Behaviour(ABC):
     def behave(self, player, location):
         ...
 
+    def __repr__(self):
+        return f"{self.__class__.__name__}"
+
 
 class Impulsive(Behaviour):
     def behave(self, player, location):
