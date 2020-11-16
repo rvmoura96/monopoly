@@ -23,9 +23,9 @@ class Board:
         ) % len(self.locations)
 
     def remove_losers(self, losers):
-        self.players_order = [
-            player for player in self.players_order if player not in losers
-        ]
+        self.players_order = filter(
+            lambda player: player not in losers, self.players_order
+        )
 
         for loser in losers:
             self.players_location.pop(loser)
