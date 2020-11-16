@@ -34,6 +34,3 @@ class Cautious(Behaviour):
 class Random(Behaviour):
     def behave(self, player, location):
         return choice([True, False])
-
-
-# Template method usando inversão de controle
