@@ -1,3 +1,6 @@
+[![codecov](https://codecov.io/gh/rvmoura96/monopoly/branch/master/graph/badge.svg)](https://codecov.io/gh/rvmoura96/monopoly)
+![CI](https://github.com/rvmoura96/monopoly/workflows/CI/badge.svg)
+
 # Monopoly game
 
 This is a simple monopoly implementation.
@@ -21,3 +24,7 @@ To execute the core for monopoly simulator you should run the following command 
 ```
 python monopoly/game.py
 ```
+
+To check code coverage you can click in this badge [![codecov](https://codecov.io/gh/rvmoura96/monopoly/branch/master/graph/badge.svg)](https://codecov.io/gh/rvmoura96/monopoly) and to check CI ![CI](https://github.com/rvmoura96/monopoly/workflows/CI/badge.svg)
+
+On linter step from CI it's executed syntax analisys and unittests.
