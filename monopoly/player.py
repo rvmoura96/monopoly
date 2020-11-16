@@ -27,4 +27,4 @@ class Player:
         return randrange(1, 7)
 
     def __repr__(self):
-        return f"{self.balance} - {self.behaviour.__class__}"
+        return f"{self.balance} - {self.behaviour.__class__.__name__}"

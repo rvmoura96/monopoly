@@ -8,7 +8,7 @@ class Location:
         self.owner = owner
 
     def remove_owner(self):
-        self.ownser = None
+        self.owner = None
 
     def __repr__(self):
         return f"{self.owner} - {self.cost_of_sale} - {self.cost_of_rent}"
