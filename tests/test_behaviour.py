@@ -54,14 +54,18 @@ class TestDemandingBehaviour(TestCase):
         result = self.player.balance
         self.assertEqual(expected, result, "message")
 
-    def test_demanding_behaviour_buy_should_keep_player_balance_when_location_cost_of_rent_lesser_than_50(self):
+    def test_demanding_behaviour_buy_should_keep_player_balance_when_location_cost_of_rent_lesser_than_50(
+        self,
+    ):
         location = Location(cost_of_sale=150, cost_of_rent=49)
         expected = 300
         self.player.buy(location)
         result = self.player.balance
         self.assertEqual(expected, result)
 
-    def test_demanding_behaviour_buy_should_keep_player_balance_when_player_balance_when_location_already_have_a_owner(self):
+    def test_demanding_behaviour_buy_should_keep_player_balance_when_player_balance_when_location_already_have_a_owner(
+        self,
+    ):
         player2 = Player(behaviour=self.behaviour, balance=300)
         location = Location(cost_of_sale=150, cost_of_rent=55)
         location.owner = player2
@@ -76,7 +80,9 @@ class TestRandomBehaviour(TestCase):
         self.player = Player(behaviour=self.behaviour, balance=300)
 
     @mock.patch("monopoly.behaviour.choice", return_value=True)
-    def test_random_behaviour_buy_should_update_player_balance_when_random_value_is_true(self, mocked_choice):
+    def test_random_behaviour_buy_should_update_player_balance_when_random_value_is_true(
+        self, mocked_choice
+    ):
         location = Location(cost_of_sale=150, cost_of_rent=49)
         self.player.buy(location)
         expected = 150
@@ -84,7 +90,9 @@ class TestRandomBehaviour(TestCase):
         self.assertEqual(expected, result)
 
     @mock.patch("monopoly.behaviour.choice", return_value=False)
-    def test_random_behaviour_buy_should_keep_player_balance_unchanged_when_random_value_is_false(self, mocked_choice):
+    def test_random_behaviour_buy_should_keep_player_balance_unchanged_when_random_value_is_false(
+        self, mocked_choice
+    ):
         location = Location(cost_of_sale=150, cost_of_rent=49)
         self.player.buy(location)
         expected = 300
@@ -97,7 +105,9 @@ class TestCautiousBehaviour(TestCase):
         self.behaviour = Cautious()
         self.player = Player(behaviour=self.behaviour, balance=300)
 
-    def test_cautious_behaviour_should_keep_balance_unchanged_when_player_balance_less_location_cost_of_sale_result_lesser_than_80(self):
+    def test_cautious_behaviour_should_keep_balance_unchanged_when_player_balance_less_location_cost_of_sale_result_lesser_than_80(
+        self,
+    ):
         location = Location(cost_of_sale=250, cost_of_rent=49)
         self.player.buy(location)
         expected = 300
@@ -107,4 +117,4 @@ class TestCautiousBehaviour(TestCase):
     def test_cautious_behaviour_repr_should_return_Cautious(self):
         expected = "Cautious"
         result = repr(self.behaviour)
-        self.assertEqual(expected, result, 'message')
+        self.assertEqual(expected, result, "message")

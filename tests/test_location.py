@@ -27,7 +27,7 @@ class TestLocation(TestCase):
         location.update_owner(player)
         result = location.owner
         expected = player
-        self.assertEqual(expected, result, 'message')
+        self.assertEqual(expected, result, "message")
 
     def test_remove_owner_should_set_location_owner_value_to_none(self):
         behaviour = Demanding()
@@ -37,11 +37,13 @@ class TestLocation(TestCase):
         location.remove_owner()
         self.assertIsNone(location.owner)
 
-    def test_repr_should_return_a_string_with_player_info_and_location_cost_of_sale_and_location_cost_of_rent(self):
+    def test_repr_should_return_a_string_with_player_info_and_location_cost_of_sale_and_location_cost_of_rent(
+        self,
+    ):
         behaviour = Demanding()
         player = Player(behaviour=behaviour, balance=300)
         location = Location(cost_of_sale=150, cost_of_rent=50)
         location.update_owner(player)
         expected = "300 - Demanding - 150 - 50"
         result = repr(location)
-        self.assertEqual(expected, result   )
+        self.assertEqual(expected, result)
